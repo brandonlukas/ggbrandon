@@ -1,0 +1,16 @@
+Package: ggbrandon
+Title: Brandon-Style Themes and Utilities for ggplot2
+Version: 0.0.0.9000
+Authors@R: 
+    person("Brandon", "Lukas", email = "blukas4@uic.edu", role = c("aut", "cre"))
+Description: Provides Brandon-style ggplot2 themes and helper functions for 
+    generating clean, publication-ready plots. Includes custom axis styling, 
+    uniform text and line sizing, and dimension reduction plot themes. Designed 
+    for consistent, reproducible plotting workflows, especially in single-cell 
+    and genomics applications.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    ggplot2
