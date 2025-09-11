@@ -36,6 +36,8 @@ theme_brandon <- function(
       legend.title = ggplot2::element_text(size = base_size, family = base_family, color = color),
       legend.text = ggplot2::element_text(size = base_size, family = base_family, color = color),
       strip.text = ggplot2::element_text(size = base_size, family = base_family, color = color),
-      strip.clip = "off"
+      strip.clip = "off",
+      plot.title.position = "plot",
+      plot.caption.position = "plot"
     )
 }
