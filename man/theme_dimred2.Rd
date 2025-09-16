@@ -2,27 +2,14 @@
 % Please edit documentation in R/theme_dimred2.R
 \name{theme_dimred2}
 \alias{theme_dimred2}
-\title{Alternative Dimension Reduction Theme with Arrows and Label}
+\title{Alternative Dimension Reduction Theme with Arrows}
 \usage{
 theme_dimred2(
-  label = NULL,
-  hjust = -0.2,
-  vjust = -0.6,
   axis = legendry::guide_axis_base(cap = I(c(-Inf, 0.2))),
   arrow = grid::arrow(type = "closed", angle = 25, length = grid::unit(0.4, "lines"))
 )
 }
 \arguments{
-\item{label}{Optional corner label text. If NULL, axis labels are not removed.}
-
-\item{hjust}{Horizontal justification for the corner label (default = -0.2).
-Negative values push the label further left of the axis corner,
-positive values push it right.}
-
-\item{vjust}{Vertical justification for the corner label (default = -0.6).
-Negative values push the label further below the axis corner,
-positive values push it upward.}
-
 \item{axis}{A guide object for axes (default =
 \code{legendry::guide_axis_base(cap = I(c(-Inf, 0.2)))}).}
 
@@ -32,17 +19,21 @@ positive values push it upward.}
 A list of ggplot2 layers that can be added to a plot.
 }
 \description{
-Provides a styled theme for UMAP/PCA/t-SNE plots with arrowed axes,
-cropped axis guides, and an optional corner annotation.
+Provides a styled theme for UMAP/PCA/t-SNE plots with arrowed axes
+and cropped axis guides.
 }
 \examples{
-# With default axis labels
+# Minimal dimred plot with arrowed axes
 ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
   geom_point() +
   theme_dimred2()
 
-# With custom corner label
+# Add your own corner annotation manually if desired
 ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
   geom_point() +
-  theme_dimred2(label = "UMAP")
+  theme_dimred2() +
+  annotate("text",
+    x = -Inf, y = -Inf, label = "UMAP",
+    hjust = -0.2, vjust = -0.6
+  )
 }
