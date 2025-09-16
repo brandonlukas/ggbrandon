@@ -1,15 +1,8 @@
-#' Alternative Dimension Reduction Theme with Arrows and Label
+#' Alternative Dimension Reduction Theme with Arrows
 #'
-#' Provides a styled theme for UMAP/PCA/t-SNE plots with arrowed axes,
-#' cropped axis guides, and an optional corner annotation.
+#' Provides a styled theme for UMAP/PCA/t-SNE plots with arrowed axes
+#' and cropped axis guides.
 #'
-#' @param label Optional corner label text. If NULL, axis labels are not removed.
-#' @param hjust Horizontal justification for the corner label (default = -0.2).
-#'   Negative values push the label further left of the axis corner,
-#'   positive values push it right.
-#' @param vjust Vertical justification for the corner label (default = -0.6).
-#'   Negative values push the label further below the axis corner,
-#'   positive values push it upward.
 #' @param axis A guide object for axes (default =
 #'   \code{legendry::guide_axis_base(cap = I(c(-Inf, 0.2)))}).
 #' @param arrow A \code{grid::arrow()} object for axis lines.
@@ -17,19 +10,20 @@
 #' @export
 #'
 #' @examples
-#' # With default axis labels
+#' # Minimal dimred plot with arrowed axes
 #' ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
 #'   geom_point() +
 #'   theme_dimred2()
 #'
-#' # With custom corner label
+#' # Add your own corner annotation manually if desired
 #' ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
 #'   geom_point() +
-#'   theme_dimred2(label = "UMAP")
+#'   theme_dimred2() +
+#'   annotate("text",
+#'     x = -Inf, y = -Inf, label = "UMAP",
+#'     hjust = -0.2, vjust = -0.6
+#'   )
 theme_dimred2 <- function(
-    label = NULL,
-    hjust = -0.2,
-    vjust = -0.6,
     axis = legendry::guide_axis_base(cap = I(c(-Inf, 0.2))),
     arrow = grid::arrow(
       type = "closed",
@@ -46,21 +40,6 @@ theme_dimred2 <- function(
     ),
     ggplot2::guides(x = axis, y = axis)
   )
-
-  if (!is.null(label)) {
-    layers <- c(
-      layers,
-      list(
-        ggplot2::annotate(
-          "text",
-          x = -Inf, y = -Inf,
-          label = label,
-          hjust = hjust, vjust = vjust
-        ),
-        ggplot2::labs(x = NULL, y = NULL)
-      )
-    )
-  }
 
   layers
 }

@@ -1,6 +1,6 @@
 Package: ggbrandon
 Title: Brandon-Style Themes and Utilities for ggplot2
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person("Brandon", "Lukas", email = "blukas4@uic.edu", role = c("aut", "cre"))
 Description: Provides Brandon-style ggplot2 themes and helper functions for 
