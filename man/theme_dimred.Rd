@@ -4,23 +4,17 @@
 \alias{theme_dimred}
 \title{Minimal Theme for Dimension Reduction Plots}
 \usage{
-theme_dimred(label = TRUE, square = TRUE)
-}
-\arguments{
-\item{label}{Logical. Whether to show axis titles and lines. Defaults to \code{TRUE}.}
-
-\item{square}{Logical. Whether to set a square aspect ratio. Defaults to \code{TRUE}.}
+theme_dimred()
 }
 \value{
 A \code{\link[ggplot2:theme]{ggplot2::theme()}} object.
 }
 \description{
 A simple helper theme for dimension reduction (e.g., UMAP, PCA, t-SNE) plots.
-It removes axis ticks and text, and optionally hides or shows axis titles and lines.
-It can also enforce a square aspect ratio.
+It removes axis ticks and text and enforces a square aspect ratio.
 }
 \examples{
 ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
   geom_point() +
-  theme_dimred(label = FALSE, square = TRUE)
+  theme_dimred()
 }

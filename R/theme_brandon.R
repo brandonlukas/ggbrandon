@@ -26,8 +26,8 @@ theme_brandon <- function(
       legend.background = ggplot2::element_rect(fill = "transparent", color = NA),
       legend.box.background = ggplot2::element_rect(fill = "transparent", color = NA),
       strip.background = ggplot2::element_rect(fill = "transparent", color = NA),
-      axis.line = ggplot2::element_line(size = base_line_size, color = color),
-      axis.ticks = ggplot2::element_line(size = base_line_size, color = color),
+      axis.line = ggplot2::element_line(linewidth = base_line_size, color = color),
+      axis.ticks = ggplot2::element_line(linewidth = base_line_size, color = color),
       axis.title = ggplot2::element_text(size = base_size, family = base_family, color = color),
       axis.text = ggplot2::element_text(size = base_size, family = base_family, color = color),
       plot.title = ggplot2::element_text(size = base_size, family = base_family, color = color),
@@ -38,6 +38,7 @@ theme_brandon <- function(
       strip.text = ggplot2::element_text(size = base_size, family = base_family, color = color),
       strip.clip = "off",
       plot.title.position = "plot",
-      plot.caption.position = "plot"
+      plot.caption.position = "plot",
+      legend.location = "plot"
     )
 }
